@@ -1,7 +1,8 @@
-const Sequelize = require("sequelize");
 require("dotenv").config();
+const Sequelize = require("sequelize");
 const { CONNECTION_STRING } = process.env;
-const moment =require('moment')
+const moment = require("moment");
+
 const sequelize = new Sequelize(CONNECTION_STRING, {
   dialect: "postgres",
   dialectOptions: {
@@ -62,62 +63,74 @@ module.exports = {
                 ('Grate movie', 8, 4),
                 ('I love this city', 5, 1):
                         `
-      )
-      .then(() => {
-        console.log("DB seeded successfully!");
-        res.sendStatus(200);
-      })
-      .catch((err) => console.log("error seeding DB", err));
-  },
+                )
+                .then(() => {
+                    console.log("DB seeded successfully!");
+                    res.sendStatus(200);
+                })
+                .catch((err) => console.log("error seeding DB", err));
+            },
 
-  getAllPosts: (req, res) => {
-    sequelize
-      .query(
-        `
-            SELECT p.*, userid as userId,username, profilePic FROM posts as p join users as u on (userid = p.userId);
-            `
-      )
-      .then((dbRes) => {
-        res.status(200).send(dbRes[0]);
-      })
-      .catch((err) => console.log(err));
+                getAllPosts: (req, res) => {
+                sequelize
+                .query(
+                    `
+                        SELECT p.*, userid as userId,username, profilePic FROM posts as p join users as u on (userid = p.userId);
+                        `
+                )
+                .then((dbRes) => {
+                    res.status(200).send(dbRes[0]);
+                })
+                .catch((err) => console.log(err));
+          },
+                createPost: (req, res) => {
+                const { content, image, createdAt, userid } = req.body;
+                const date = moment(Date.now()).format("YYYY-MM-DD HH:mm:ss");
+                sequelize
+                .query(
+                    `insert into posts ( content, image, createdAt, userid)
+                        values ('${content}', '${image}', '${date}','${userid}');
+                        `
+                )
+                    .then(() => {
+                     console.log("Created new post successfully!");
+                    res.sendStatus(200);
+                })
+                .catch((err) => console.log(err));
     },
-    createPost: (req, res) => {
-       const {  content, image, createdAt, userid} = req.body;
-       const date = moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
-        sequelize
-          .query(
-            `insert into posts ( content, image, createdAt, userid)
-            values ('${content}', '${image}', '${date}','${userid}');
-               `
-          )
-          .then(() => {
-            res.sendStatus(200);
-          })
-          .catch((err) => console.log(err));
-    },
-    deletePost: (req, res) => {
-        const {post_id} =req.params
-        sequelize.query(
-            `
-          
-            `
-      )
-    },
-    getComments: (req, res) => {
-        const {post_id} = req.body
-    sequelize
-      .query(
-        `
+    // updatePost: (req, res) => {
+    //     const { content, image , userInfo} = req.body
+    //     const date = moment(Date.now()).format("YYYY-MM-DD HH:mm:ss");
+    //     sequelize.query(`
+    //     update posts
+    //     set content = '${content}',
+    //     image = '${image}',
+        
+    //     `)
+                    
+                // },
+            deletePost: (req, res) => {
+                const { post_id } = req.params;
+                sequelize.query(
+                `
+                    
+                        `
+                );
+            },
+            getComments: (req, res) => {
+                const { post_id } = req.body;
+                sequelize
+                .query(
+                    `
 
-               SELECT c.*, comment_user_id as userid,username, profilePic FROM comments as c join users as u on (comment_user_id = c.comment_user_id);
-            
+                        SELECT c.*, comment_user_id as userid,username, profilePic FROM comments as c join users as u on (comment_user_id = c.comment_user_id);
+                        
 
-            `
-      )
-      .then((dbRes) => {
-        res.status(200).send(dbRes[0]);
-      })
-      .catch((err) => console.log(err));
-    }
+                        `
+                )
+                .then((dbRes) => {
+                    res.status(200).send(dbRes[0]);
+                })
+                .catch((err) => console.log(err));
+            },
 };

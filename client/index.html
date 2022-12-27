@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Social App</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <h2 class="logo">Social App</h2>
+        <div class="search-bar">
+          <i class="uil uil-search"></i>
+          <input
+            type="search"
+            placeholder="Search for creators, inspirations"
+          />
+        </div>
+        <div class="create">
+            <!-- <label class="btn btn-primary" for="create-post" >Post</label> -->
+            <div class="profile-photo">
+                <img src="./assests/person.jpg" alt="person" />
+            </div>
+            <label class="btn btn-primary">  <a class="nav-link" href="login.html">Login</a></label>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <div class="left">
+            <a class="profile">
+                <div class="profile-photo">
+                    <img src="./assests/images/profile-1.jpg" alt="" />
+                </div>
+                
+                <div class="handle">
+                  <h4>Diana Sky</h4>
+                  <p class="text">@diana</p>
+                </div>
+
+          </a>
+          <!-- sidebar -->
+          <div class="sidebar">
+            <a class="menu-item active">
+              <span><i class="uil uil-home"></i></span>
+              <h3>Home</h3>
+            </a>
+            <a class="menu-item">
+              <span><i class="uil uil-compass"></i></span>
+              <h3>Explore</h3>
+            </a>
+            <a class="menu-item">
+              <span><i class="uil uil-bell"></i></span>
+              <h3>Notifications</h3>
+              <!-- <div class="notifications-popup">
+                <div>
+                    <div class="profile-photo">
+                        <img src="./assests/images/profile-2.jpg" alt="">
+                    </div>
+                    <div class="notification-body">
+                        <b>Adam Barold</b>
+                    </div>
+                </div> -->
+              
+            </a>
+            <a class="menu-item">
+              <span><i class="uil uil-envelope-alt"></i></span>
+              <h3>Messages</h3>
+            </a>
+            <a class="menu-item">
+              <span><i class="uil uil-setting"></i></span>
+              <h3>Settings</h3>
+            </a>
+        </div>
+        <label for="create-post" class="btn btn-primary">Create Post</label>
+          </div>
+      
+      
+        <div class="middle">
+   <div class="stories">
+    <div class="story">
+        <div class="profile-photo">
+            <img src="./assests/images/profile-8.jpg" alt="image">
+        </div>
+        <p class="name">Mark</p>
+    </div>
+    <div class="story">
+        <div class="profile-photo">
+            <img src="./assests/images/profile-11.jpg" alt="image">
+        </div>
+        <p class="name">Ailyn Adilkhan</p>
+    </div>
+    <div class="story">
+        <div class="profile-photo">
+            <img src="./assests/images/profile-9.jpg" alt="image">
+        </div>
+        <p class="name">Lucas</p>
+    </div>
+    <div class="story">
+        <div class="profile-photo">
+            <img src="./assests/images/profile-14.jpg" alt="image">
+        </div>
+        <p class="name">Aibar Adilkhan</p>
+    </div>
+   </div>
+
+   
+   <form class="create-post">
+    <div class="profile-photo">
+        <img src="./assests/images/profile-1.jpg" alt="">
+    </div>
+    <input type="text" placeholder="Share new post, Diana" id="create-post">
+    <input type="submit" value="Post" class="btn btn-primary">
+   </form>
+      <section>
+    <h3>display posts</h3>
+<section id="display"></section>
+</section>
+
+   <div class="feeds">
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="./assests/images/profile-13.jpg" alt="">
+                    </div>
+                    <div class="ingo">
+                        <h3>Lana Rose</h3>
+                        <small>15 min ago</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"> </i>
+                </span>
+            </div>
+            <div class="photo">
+                <img src="./assests/images/feed-1.jpg" alt="">
+            </div>
+            <div class="action-button">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+            <div class="liked-by">
+                <span><img src="./assests/images/profile-10.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-4.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-15.jpg" alt=""></span>
+                <p>Liked by <b>Ernest Achiever</b> and <b>2,300 others</b></p>
+             </div>
+             <div class="caption">
+                <p><b>Lana Rose</b>Lorem ipsom dolor sit quisquam eius</p>
+             </div>
+             <div class="comments text-muted">View all 278 comments</div>
+        </div>
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="./assests/images/profile-13.jpg" alt="">
+                    </div>
+                    <div class="ingo">
+                        <h3>Lana Rose</h3>
+                        <small>15 min ago</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"> </i>
+                </span>
+            </div>
+            <div class="photo">
+                <img src="./assests/images/feed-1.jpg" alt="">
+            </div>
+            <div class="action-button">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+            <div class="liked-by">
+                <span><img src="./assests/images/profile-10.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-4.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-15.jpg" alt=""></span>
+                <p>Liked by <b>Ernest Achiever</b> and <b>2,300 others</b></p>
+             </div>
+             <div class="caption">
+                <p><b>Lana Rose</b>Lorem ipsom dolor sit quisquam eius</p>
+             </div>
+             <div class="comments text-muted">View all 278 comments</div>
+        </div>
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="./assests/images/profile-13.jpg" alt="">
+                    </div>
+                    <div class="ingo">
+                        <h3>Lana Rose</h3>
+                        <small>15 min ago</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"> </i>
+                </span>
+            </div>
+            <div class="photo">
+                <img src="./assests/images/feed-1.jpg" alt="">
+            </div>
+            <div class="action-button">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+            <div class="liked-by">
+                <span><img src="./assests/images/profile-10.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-4.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-15.jpg" alt=""></span>
+                <p>Liked by <b>Ernest Achiever</b> and <b>2,300 others</b></p>
+             </div>
+             <div class="caption">
+                <p><b>Lana Rose</b>Lorem ipsom dolor sit quisquam eius</p>
+             </div>
+             <div class="comments text-muted">View all 278 comments</div>
+        </div>
+        <div class="feed">
+            <div class="head">
+                <div class="user">
+                    <div class="profile-photo">
+                        <img src="./assests/images/profile-13.jpg" alt="">
+                    </div>
+                    <div class="ingo">
+                        <h3>Lana Rose</h3>
+                        <small>15 min ago</small>
+                    </div>
+                </div>
+                <span class="edit">
+                    <i class="uil uil-ellipsis-h"> </i>
+                </span>
+            </div>
+            <div class="photo">
+                <img src="./assests/images/feed-1.jpg" alt="">
+            </div>
+            <div class="action-button">
+                <div class="interaction-buttons">
+                    <span><i class="uil uil-heart"></i></span>
+                    <span><i class="uil uil-comment-dots"></i></span>
+                    <span><i class="uil uil-share-alt"></i></span>
+
+                </div>
+                <div class="bookmark">
+                    <span><i class="uil uil-bookmark-full"></i></span>
+                </div>
+            </div>
+            <div class="liked-by">
+                <span><img src="./assests/images/profile-10.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-4.jpg" alt=""></span>
+                <span><img src="./assests/images/profile-15.jpg" alt=""></span>
+                <p>Liked by <b>Ernest Achiever</b> and <b>2,300 others</b></p>
+             </div>
+             <div class="caption">
+                <p><b>Lana Rose</b>Lorem ipsom dolor sit quisquam eius</p>
+             </div>
+             <div class="comments text-muted">View all 278 comments</div>
+        </div>
+   </div>
+        </div>
+
+
+        <!-- right -->
+        <div class="right">
+
+        </div>
+      </div>
+      </div>
+    </main>
+
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="posts.js"></script>
+  </body>
+</html>
