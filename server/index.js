@@ -19,7 +19,7 @@ app.use(cors());
 app.post("/api/seed", seed);
 
 app.get("/api/posts", getAllPosts);
-app.post("/api/posts", createPost);
+app.post("/api/addPost", createPost);
 app.delete("/deletePost/:id", deletePost);
 app.get("/api/comments", getComments);
 

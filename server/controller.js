@@ -45,17 +45,17 @@ module.exports = {
             
 
                 insert into users(username, email, passhash, coverPic, profilePic)
-                values('AdamSendler', 'sendler@gmail.com','123456', 'img.jpg', 'image.gpg'),
-                ('TomCruz', 'tom@gmail.com', '123456', 'img.jpg', 'image.gpg'),
-                ('Jessica', 'jess@gmail.com', '6788', 'img.jpg', 'image.gpg');
+                values('Adam Sendler', 'sendler@gmail.com','123456', 'img.jpg', 'image.gpg'),
+                ('Tom Cruz', 'tom@gmail.com', '123456', 'http://images4.fanpop.com/image/photos/16300000/Random-people-random-16382026-600-800.jpg', 'http://images4.fanpop.com/image/photos/16300000/Random-people-random-16382026-600-800.jpg'),
+                ('Jessica', 'jess@gmail.com', '6788', 'https://img.freepik.com/premium-photo/adult-handsome-indian-businessman-solving-intelligence-challenge_621325-1913.jpg?w=360', 'https://img.freepik.com/premium-photo/relaxed-thinking-about-something-looking-copy-space_1187-275076.jpg?w=360');
 
 
                 insert into posts( userid,content, image)
-                values( 1,'Lello everyone', 'img.jpg'),
-                ( 2, 'Great day', 'img.jpg'),
-                (3,  'Dont be shy', 'img.jpg'),
-                (4, 'Everyone is amazing', 'img.jpg'),
-                (5, 'Green tea', 'img.jpg');
+                values( 1,'Lello everyone', 'https://img.freepik.com/free-photo/shy-pretty-girl-with-shaggy-black-hair-dark-skin-wearing-stylish-eyeglasses_273609-13866.jpg?w=2000'),
+                ( 2, 'Great day', 'https://img.freepik.com/premium-photo/relaxed-thinking-about-something-looking-copy-space_1187-275076.jpg?w=360'),
+                (3,  'Dont be shy', 'https://img.freepik.com/free-photo/chek-it-out-intrigued-attractive-flirty-guy-playful-romantic-mood-holding-hand-beard-looking-right-smiling-with-pleased-curious-expression_176420-24540.jpg?auto=format&h=200'),
+                (4, 'Everyone is amazing', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyx9MT0ZYe6uRGTdkjdAPhcK_KY4G8jDOtplrVt1ktRseDLEzh8951NNp_aiYuJy4smxg&usqp=CAU'),
+                (5, 'Green tea', 'https://thumbs.dreamstime.com/b/young-arab-doctor-man-standing-over-isolated-background-waiving-saying-hello-happy-smiling-friendly-welcome-gesture-240697509.jpg');
 
                 insert into comments(content, comment_post_id, comment_user_id)
                 values('Thank you', 1, 2),
@@ -63,19 +63,19 @@ module.exports = {
                 ('Grate movie', 8, 4),
                 ('I love this city', 5, 1):
                         `
-                )
-                .then(() => {
-                    console.log("DB seeded successfully!");
-                    res.sendStatus(200);
-                })
-                .catch((err) => console.log("error seeding DB", err));
+      )
+      .then(() => {
+        console.log("DB seeded successfully!");
+        res.sendStatus(200);
+      })
+      .catch((err) => console.log("error seeding DB", err));
             },
 
                 getAllPosts: (req, res) => {
                 sequelize
                 .query(
                     `
-                        SELECT p.*, userid as userId,username, profilePic FROM posts as p join users as u on (userid = p.userId);
+                        SELECT p.*, userid as userId,username, image, profilePic FROM posts as p join users as u on (userid = p.userId);
                         `
                 )
                 .then((dbRes) => {

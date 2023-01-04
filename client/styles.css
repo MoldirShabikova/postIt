@@ -198,7 +198,10 @@ main .container .left .profile {
   text-align: center;
   padding: 1rem auto;
 }
-
+#image{
+  width: 400px;
+  height: auto;
+}
 /* Middle */
 
 .middle .stories {
@@ -253,8 +256,8 @@ main .container .left .profile {
 
 
 .middle .story .profile-photo {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   align-self: start;
   border: 3px solid var(--color-primary);
 }
@@ -269,20 +272,23 @@ main .container .left .profile {
  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background: var(--color-white);
-  padding: 0.4rem var(--card-padding);
+  padding:1rem var(--card-padding);
   border-radius: var(--border-radius);
 }
+.middle .create-post #file{
+display: none;
 
+}
 
 .middle .create-post input[type="text"]{
 justify-self: start;
-width: 100%;
-padding-left: 1rem;
+width: 80%;
+padding-left: 2rem;
 background: transparent;
 color: var(--color-dark);
-margin-right: 1rem;
+margin-right: 5rem;
 }
 .middle .feeds .feed{
     background: var(--color-white);
